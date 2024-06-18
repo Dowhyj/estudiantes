@@ -5,7 +5,7 @@ public class NodoTrie {
     
     private String letra;   //Cada nodo representa una letra
     private ArrayList<NodoTrie> hijos;
-    private int ybyy;
+    
     private boolean finPalabra;   //ununu
     private TrieCarreras materias;  //Trie para las materias de la carrera
 
