@@ -1,7 +1,6 @@
 package aed;
 
 public class SistemaSIU {
-    TrieCarreras a ;
     enum CargoDocente{
         AY2,
         AY1,
@@ -10,13 +9,7 @@ public class SistemaSIU {
     }
 
     public SistemaSIU(InfoMateria[] infoMaterias, String[] libretasUniversitarias){
-       // throw new UnsupportedOperationException("Método no implementado aún");	
-       String[] carreras = {};
-       for(InfoMateria m : infoMaterias)    {
-        String c = m.getParesCarreraMateria()[0].getNombreMateria();
-       }
-       a.insertarCarrera(carreras[0]);
-
+       throw new UnsupportedOperationException("Método no implementado aún");	
     }
 
     public void inscribir(String estudiante, String carrera, String materia){

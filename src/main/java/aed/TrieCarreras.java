@@ -5,7 +5,7 @@ public class TrieCarreras{
     private NodoTrie raiz;
 
     public TrieCarreras(){
-        raiz = new NodoTrie("");
+        raiz = new NodoTrie('\0');
     }
 
     public void insertarCarrera(String carrera) {
@@ -13,17 +13,18 @@ public class TrieCarreras{
         for (char c : carrera.toCharArray()) {
             NodoTrie hijo = buscarHijo(nodoActual, c);
             if (hijo == null) {
-                hijo = new NodoTrie(Character.toString(c));
+                hijo = new NodoTrie(c);
                 nodoActual.getHijos().add(hijo);
             }
             nodoActual = hijo;
         }
         nodoActual.setFinPalabra(true);
+        nodoActual.setMaterias(new TrieCarreras());     //Inicio un trie para materias
     }
 
     private NodoTrie buscarHijo(NodoTrie nodo, char c){
         for(NodoTrie hijo: nodo.getHijos()){
-            if (hijo.getLetra().equals(Character.toString(c))) {
+            if (hijo.getCaracter() == c) {
                 return hijo;
             }
         }
@@ -44,10 +45,7 @@ public class TrieCarreras{
 
     public void insertarMateria(String carrera, String materia){
         NodoTrie nodoCarrera = encontrarNodoCarrera(carrera);
-        if (nodoCarrera != null && nodoCarrera.esFinPalabra()) {
-            if (nodoCarrera.getMaterias() == null) {
-                nodoCarrera.setMaterias(new TrieCarreras());
-            }    
+        if (nodoCarrera != null && nodoCarrera.esFinPalabra()) {   
             nodoCarrera.getMaterias().insertarCarrera(materia);         
         }
     }
