@@ -12,14 +12,14 @@ public class Carreras{
         String NombreCarrera;
         ArrayList<Nodo> siguientes;
         Nodo Padre;
-        Materias Materias;
+        //Materias Materias;
 
 
         Nodo(char valor){
         this.valor = valor;
         this.NombreCarrera = null;
         this.siguientes = new ArrayList<>();
-        this.Materias = null;
+        //this.Materias = null;
         this.Padre = null;
         }
 
@@ -69,10 +69,10 @@ public class Carreras{
             nodo = hijo;
         }
         nodo.NombreCarrera = Pal;
-        if (nodo.Materias == null) {
+        /*if (nodo.Materias == null) {
             nodo.Materias = new Materias();
             tamanio++;
-        }
+        }*/
     }
 
     public boolean pertenece(String Pal){
@@ -121,7 +121,7 @@ public class Carreras{
             eliminar1(hoja.Padre);
         }
     }
-
+/* 
     public Materias buscarTrieMater(String Pal){
         Nodo nodo = raiz;
         for(char c : Pal.toCharArray()){
@@ -137,5 +137,5 @@ public class Carreras{
     public int tamanio(){
         return tamanio;
     }
-
+*/
 }

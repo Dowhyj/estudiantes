@@ -1,6 +1,11 @@
 package aed;
 
+import java.util.ArrayList;
+import aed.mio.Carreras;
+import aed.mio.NodoCarreras;
+
 public class SistemaSIU {
+    Carreras carreras;
     enum CargoDocente{
         AY2,
         AY1,
@@ -9,9 +14,27 @@ public class SistemaSIU {
     }
 
     public SistemaSIU(InfoMateria[] infoMaterias, String[] libretasUniversitarias){
-       throw new UnsupportedOperationException("Método no implementado aún");	
-    }
+        carreras = new Carreras();   
+        for(InfoMateria infomat : infoMaterias){
+            ArrayList<NodoCarreras> dondeesta = new ArrayList<NodoCarreras>();
+            for(ParCarreraMateria par : infomat.getParesCarreraMateria()){
 
+                NodoCarreras nodocar = carreras.buscar(par.getCarrera());
+
+                if(nodocar == null) nodocar = carreras.insert(par.getCarrera());
+                
+                dondeesta.add(nodocar);
+                carreras.insertmat(nodocar, par.getNombreMateria(),dondeesta);
+            }
+        }
+
+    }
+    public String[] getcarr(){
+        return carreras.getAllWords();
+    }
+    public String[] getmats(String car){
+        return carreras.getmats(car);
+    }
     public void inscribir(String estudiante, String carrera, String materia){
         throw new UnsupportedOperationException("Método no implementado aún");
     }

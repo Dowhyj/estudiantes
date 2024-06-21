@@ -26,8 +26,18 @@ public class SistemaSIUTests {
     @Test
     void nuevo_sistema() {
         SistemaSIU sistema = new SistemaSIU(infoMaterias, estudiantes);
-    }
+        String[] carr = sistema.getcarr();
+        for(String c : carr){
+            System.out.println(c + ":");
+            System.out.println();
+            String[] a = sistema.getmats(c);
+            for(String aa : a){
+                System.out.println(aa);
+            }
+            System.out.println();
+        }
 
+    }
     void realizar_inscripciones(SistemaSIU sistema){
         sistema.inscribir(estudiantes[0], "Ciencias de Datos", "Algoritmos1");
         sistema.inscribir(estudiantes[0], "Ciencias de Datos", "Análisis I");
