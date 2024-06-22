@@ -1,7 +1,6 @@
 package aed;
 
 import java.util.ArrayList;
-import aed.nuevo.*;
 //Invariante de Representacion: carreras cumple el invariante de Carreras y estudiantes cumple el invariante de Estudiante
 
 public class SistemaSIU {
