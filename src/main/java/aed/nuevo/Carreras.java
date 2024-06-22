@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import aed.SistemaSIU.CargoDocente;
 // Invariante de Representacion:  raiz es distinto de null y raiz cumple el invariante de NodoCarreras y
-// los hijos de la raiz estan ordenados lexicograficamente y no puede tener sos hijos iguales
+// los hijos de la raiz estan ordenados lexicograficamente y no puede tener hijos iguales
 public class Carreras {
     
     NodoCarreras raiz;
