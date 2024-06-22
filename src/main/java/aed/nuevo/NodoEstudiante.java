@@ -1,7 +1,10 @@
 package aed.nuevo;
 
 import java.util.ArrayList;
-
+// Invariante de Representacion: para todo nodo, nodo cumple NodoEstudiantes y para todo hijo perteneciente a nodo.hijos, hijo cumple NodoEstudiantes
+// para todo nodo, nodo.valor es un char
+// para todo nodo, nodo.ultimaletra = false entonces nodo.materias= 0 y
+// para todo nodo, nodo.ultimaletra = true entonces nodo.materias >= 0.
 public class NodoEstudiante {
 
     char valor;
