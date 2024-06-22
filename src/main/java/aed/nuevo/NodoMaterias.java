@@ -3,7 +3,14 @@ package aed.nuevo;
 import java.util.ArrayList;
 
 import aed.SistemaSIU;
-
+// Invariante de Representacion: para todo nodo, nodo cumple NodoMaterias y para todo hijo perteneciente a nodo.hijos, hijo cumple NodoMaterias.
+// para todo nodo, nodo.valor es un char.
+// para todo nodo, nodo.ultimaletra = false entonces nodo.Carreras, nodo.otrosnombres y nodo.nombres son vacias y nodo.inscriptos=0 y nodo.docentes=[0,0,0,0] y nodo.estudiantes= new Estudiante().
+// para todo nodo, nodo.ultimaletra = true entnces nodo es hoja y nodo.carreras no es vacia y para toda carrera perteneciente a nodo.carreras, carreras cumple NodoCarreras y
+// nodo.otrosnombres no es vacia  y para todo otronombre perteneciente a nodo.otrosnombres, otronombre cumple NodoMaterias y
+// nodo.nombres no es vacia y para todo nombre perteneciente a nodo.nombres, nombre es un string y
+// nodo.inscriptos es un entero y nodo.docentes es una lista de entero que para todo docente perteneciente a nodo.docentes, docente es un entero y
+// nodo.estudiantes cumple q es de clase Estudiante.
 public class NodoMaterias {
      
     char valor;
