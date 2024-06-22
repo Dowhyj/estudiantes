@@ -1,4 +1,4 @@
-package aed.nuevo;
+package aed;
 
 import java.util.ArrayList;
 // Invariante de Representacion: para todo nodo, nodo cumple NodoEstudiantes y para todo hijo perteneciente a nodo.hijos, hijo cumple NodoEstudiantes

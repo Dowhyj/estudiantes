@@ -1,8 +1,6 @@
-package aed.nuevo;
+package aed;
 
 import java.util.ArrayList;
-
-import aed.SistemaSIU;
 // Invariante de Representacion: para todo nodo, nodo cumple NodoMaterias y para todo hijo perteneciente a nodo.hijos, hijo cumple NodoMaterias.
 // para todo nodo, nodo.valor es un char.
 // para todo nodo, nodo.ultimaletra = false entonces nodo.Carreras, nodo.otrosnombres y nodo.nombres son vacias y nodo.inscriptos=0 y nodo.docentes=[0,0,0,0] y nodo.estudiantes= new Estudiante().

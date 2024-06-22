@@ -1,4 +1,4 @@
-package aed.nuevo;
+package aed;
 
 import java.util.ArrayList;
 
