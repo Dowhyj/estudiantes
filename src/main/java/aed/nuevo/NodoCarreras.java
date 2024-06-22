@@ -2,6 +2,10 @@ package aed.nuevo;
 
 import java.util.ArrayList;
 
+// Invariante de Representacion: para todo nodo, nodo cumple NodoCarreras y para todo hijo perteneciente a nodo.hijos, hijo cumple NodoCarreras.
+// para todo nodo, nodo.valor es un char.
+// para todo nodo, nodo.ultimaletra = false entonces nodo.materiastrie = null.
+// para todo nodo, nodo.ultimaletra = true entonces nodo es hoja y nodo.materiastrie es didtinto de null y nodo.materiastrie cumple Materia y nodo.hijos es vacia.
 
 public class NodoCarreras {
     
