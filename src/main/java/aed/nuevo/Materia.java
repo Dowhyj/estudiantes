@@ -2,7 +2,7 @@ package aed.nuevo;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//Invariante de Representacion: raiz es distinto de null y raiz cumple el invariante de NodoMateria y los hijos de la raiz estan ordenados lexicograficamente y no puede tener hijos iguales.
 public class Materia {
     NodoMaterias raiz;
 
