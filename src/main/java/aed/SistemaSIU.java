@@ -2,6 +2,7 @@ package aed;
 
 import java.util.ArrayList;
 import aed.nuevo.*;
+//Invariante de Representacion: carreras cumple el invariante de Carreras y estudiantes cumple el invariante de Estudiante
 
 public class SistemaSIU {
   
@@ -14,7 +15,7 @@ public class SistemaSIU {
     }
     Carreras carreras;
     Estudiante estudiantes;
-  
+    
     //1
     //En el bucle doble se recorren todas las 'infoMaterias' y para cada una se recorren sus 'ParCarreraMateria' (primera sumatoria). En esta se realizan operaciones de búsqueda e inserción que son direcatamente propocionales a la longitud de la cadena de caracteres
     //La segunda sumatoria se realiza en el for dentro del primer for que depende de la longitud de los nombres de la materia
