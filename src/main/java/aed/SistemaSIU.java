@@ -1,9 +1,8 @@
-package aed;
+epackage aed;
 
 import java.util.ArrayList;
 //Invariante de Representacion: carreras cumple el invariante de Carreras y estudiantes cumple el invariante de Estudiante
-//para todo nodo1 hoja y nodo2 hoja, nodo1 = nodo2 si solo si el nombre de la materia de nodo1 y nombre de la materia del nodo2 pertenecen a un mismo InfoMateria
-
+//para todo nodo1 hoja y nodo2 hoja pertenecientes a NodoMaterias, nodo1 = nodo2 si solo si el nombre de la materia de nodo1 y nombre de la materia del nodo2 pertenecen a un mismo InfoMateria
 public class SistemaSIU {
   
 
