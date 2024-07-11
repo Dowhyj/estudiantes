@@ -75,24 +75,24 @@ public class SistemaSIU {
     //La operación de busqueda es directamente proporcional a la longitud de la cadena de caracteres(Carreras y Materias)
   
     public int[] plantelDocente(String materia, String carrera){
-        return carreras.buscar(carrera).getMaterias().buscar(materia).plantel();
-    }
+        return carreras.buscar(carrera).getMaterias().buscar(materia).plantel(); //Recorro el trie Carreras O(c) + recorro el trie Materias O(m) + accedo al observador plantelDocente O(1)
+    } //TOTAL = O(c + m)
 
     //6
     //En el peor de los casos, se recorre hasta la ultima carrera dentro trie carrera, y luego hasta la ultima la ultima de esa carrera.
     //La operación de búsqueda es directamente proporcional a la longitud de la cadena de caracteres(Carreras y Materias)
   
     public boolean excedeCupo(String materia, String carrera){
-        int[] plantel = carreras.buscar(carrera).getMaterias().buscar(materia).plantel();
-        int cupos = max(max(plantel[0] * 250, 100 * plantel[1]),max( 20 * plantel[2],30 * plantel[2]));
-        return carreras.buscar(carrera).getMaterias().buscar(materia).inscriptos() > cupos; 
-    }
+        int[] plantel = carreras.buscar(carrera).getMaterias().buscar(materia).plantel(); //Recorro el trie Carreras O(c) + recorro el trie Materias O(m) + accedo al observador plantelDocente O(1)
+        int cupos = max(max(plantel[0] * 250, 100 * plantel[1]),max( 20 * plantel[2],30 * plantel[3])); // Calculo el cupo total de la materia multiplicando cada elemento O(1) * 4 y sumando todos los resultados O(1) * 4 (lista plantelDocente esta acotada por la cantidad de cargos que es 4)
+        return carreras.buscar(carrera).getMaterias().buscar(materia).inscriptos() > cupos; //Recorro el trie Carreras O(c) + recorro el trie Materias O(m) + accedo al observador inscriptos O(1) + comparar O(1)
+    } // TOTAL = O(c + m) + O(4) + O(4) + O(c + m) = 2 * O(c + m) = O(c + m)
   
     //7
     //Se recorren todas las cadenas de caracteres que representan a una carrera
   
     public String[] carreras(){
-        return carreras.get_carreras();    
+        return carreras.get_carreras();     
     }
   
     //8
