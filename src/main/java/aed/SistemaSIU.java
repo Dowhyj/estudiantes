@@ -59,16 +59,16 @@ public class SistemaSIU {
     //La operacion de busqueda es proporcional a la longitud de la cadena(Carreras y Materias)
     
     public int inscriptos(String materia, String carrera){
-        return carreras.buscar(carrera).getMaterias().buscar(materia).inscriptos();
-    }
+        return carreras.buscar(carrera).getMaterias().buscar(materia).inscriptos(); //Recorro el trie Carreras O(c) + recorro el trie Materias O(m) + accedo al observador incriptos O(1)
+    } //TOTAL = O(c + m)
 
   
     //4
     //En el peor de los casos, se recorre hasta la ultima carrera dentro trie carrera, y luego hasta la ultima la ultima de esa carrera. 
     //Las operaciones de busqueda e inserción son directamente proporcionales a la longitud de las cadenas de caracteres
     public void agregarDocente(CargoDocente cargo, String carrera, String materia){
-        carreras.agregarDocente(cargo, carrera, materia);
-    }
+        carreras.agregarDocente(cargo, carrera, materia);  //Recorro el trie Carreras O(c) + recorro el trie Materias O(m) + agrego a la lista segun su cargo docente O(1)
+    }// TOTAL = O(c + m)
     
     //5
     //En el peor de los casos, se recorre hasta la ultima carrera dentro trie carrera, y luego hasta la ultima la ultima de esa carrera.
