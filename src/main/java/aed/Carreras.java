@@ -7,6 +7,7 @@ import aed.SistemaSIU.CargoDocente;
 // los hijos de la raiz estan ordenados lexicograficamente y no puede tener hijos iguales
 // Todo nodo que no tiene significado siempre tiene hijos
 // Todo nodo que no tiene hijos siempre tiene significado
+// El nodo raíz nunca tiene significado ni contiene ningún carácter y no representa una palabra por sí mismo.
 public class Carreras {
     
     NodoCarreras raiz;
