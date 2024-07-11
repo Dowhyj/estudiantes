@@ -50,9 +50,9 @@ public class SistemaSIU {
     //En el peor de los casos, se recorre hasta la ultima carrera dentro trie carrera, y luego hasta la ultima la ultima de esa carrera. 
     //Las operaciones de busqueda e inserción son directamente proporcionales a la longitud de las cadenas de caracteres
     public void inscribir(String estudiante, String carrera, String materia){
-        carreras.inscribir(estudiante, carrera, materia);
-        estudiantes.inscribir(estudiante);
-    }
+        carreras.inscribir(estudiante, carrera, materia); // Recorre el trie Carreras O(c) + Recorre el trie Marterias O(m) y inserta en su trie de estudiantes de la materia como tiene numeros acotados O(1) 
+        estudiantes.inscribir(estudiante); //Recorre al trie estudiantes y como el tamano del numero esta acotado O(1) 
+    } // TOTAL = O(c + m)
     
     //3
     //En el peor de los casos, se recorre hasta la ultima carrera dentro trie carrera, y luego hasta la ultima la ultima de esa carrera.
