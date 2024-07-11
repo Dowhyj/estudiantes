@@ -116,8 +116,8 @@ public class SistemaSIU {
     public void cerrarMateria(String materia, String carrera){
         NodoCarreras c = carreras.buscar(carrera);  // Recorro el trie carreras O(|c|)
         NodoMaterias m = c.getMaterias().buscar(materia); // Recorro el trie materias O(|m|)
-        m.cerrar_materia(estudiantes); // 
-    }
+        m.cerrar_materia(estudiantes); // La dificultad de esta linea es O(Em + Σ|n|) y esta detallada linea por linea en NodoMaterias en el procedimiento correspondiente
+    } // TOTAL = O(|c| + |m| + Σ|n| + Em )
 
     private int max(int uno,int dos){
         return uno < dos ? uno:dos;
