@@ -63,15 +63,15 @@ public class NodoMaterias {
     }
 
     public void cerrar_materia(Estudiante todos){
-        for(String estudiante : estudiantes.get_inscriptos()){
-            todos.desinscribir(estudiante);//-1
-        }
-        for(int i = 0; i < carreras.size();i++){
-            NodoCarreras n = carreras.get(i);  
-            n.sacar_materia(nombres.get(i));
-        }
+        for(String estudiante : estudiantes.get_inscriptos()){ // Recorro todos los estudiantes incriptos en esa materia O(Em) donde Em: cantidad de estudiantes inscriptos en la materia m
+            todos.desinscribir(estudiante);//-1    //Recorro el trie estudiantes con tamano de numeros acotado O(1) + resta 1 en su cant de materias incriptas O(1)
+        }// Total = O(Em)*O(2) = O(Em)
+        for(int i = 0; i < carreras.size();i++){ // Recorro la lista carreras que tiene un puntero a cada Carrera que tiene una materia igual con diferente nombre O(Σ n) con n perteneciente a Nm: conjunto de nombres de la materia m
+            NodoCarreras n = carreras.get(i);  // Accedo a un NodoCarrera especifico de la lista O(1)
+            n.sacar_materia(nombres.get(i)); // Recorro el trie materias para eliminar el nombre de la materia igual O(|n|)
+        }// Total = O(Σ n) * O(1) * O(|n|) = O(Σ|n|)
 
-    }
+    } //TOTAL = O(Em + Σ|n|)
 
     private int docente_int(SistemaSIU.CargoDocente cargo){
        switch (cargo) {
