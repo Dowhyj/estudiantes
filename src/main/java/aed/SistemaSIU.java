@@ -114,9 +114,9 @@ public class SistemaSIU {
     //Las operaciones de búsqueda (carrera y materia) son directamente proporcionales a la longitud de la cadena de caracteres
     //La operación cerrar materia depende de la longitud de los nombres relacionados a esa materia y de la cantidad de estudiantes inscriptos en esa materia
     public void cerrarMateria(String materia, String carrera){
-        NodoCarreras c = carreras.buscar(carrera);  // Recorro el trie carreras O(|c|) + accedo al nombre de
-        NodoMaterias m = c.getMaterias().buscar(materia);
-        m.cerrar_materia(estudiantes);
+        NodoCarreras c = carreras.buscar(carrera);  // Recorro el trie carreras O(|c|)
+        NodoMaterias m = c.getMaterias().buscar(materia); // Recorro el trie materias O(|m|)
+        m.cerrar_materia(estudiantes); // 
     }
 
     private int max(int uno,int dos){
